@@ -89,6 +89,41 @@ body {
   color: #000000;
 }
 
+@-webkit-keyframes close {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .btn {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -130,6 +165,11 @@ body {
   width: 1200px;
   max-width: 95%;
   margin: auto;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
 }
 
 .header {
@@ -935,6 +975,114 @@ body {
 }
 
 /* ---/// ---Мобильное меню */
+/* Всплывающее окно для регистрации */
+.popup__signUp {
+  position: fixed;
+  width: 400px;
+  max-width: 95%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  border-radius: 10px;
+  background: url(../img/mainBg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.6);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.popup__signUp .popup__header {
+  color: #210d5c;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: #210d5c;
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: 900;
+  text-shadow: -10px 10px 20px #ffffff;
+  margin-bottom: 20px;
+}
+.popup__signUp form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.popup__signUp form div {
+  width: 49%;
+  margin-bottom: 8px;
+}
+.popup__signUp form div input, .popup__signUp form div select {
+  width: 100%;
+  height: 45px;
+}
+.popup__signUp form div input[type=submit] {
+  background: linear-gradient(265.37deg, #9224D6 -49.74%, #BD87DE 116.53%);
+  border-radius: 5px;
+  font-weight: 500;
+  height: 44pxW;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+}
+.popup__signUp form div input[type=email], .popup__signUp form div [type=text], .popup__signUp form div select {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  background: transparent;
+  padding-left: 25px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.popup__signUp form div select {
+  padding-left: 0px;
+}
+.popup__signUp form div select option {
+  color: #000000;
+}
+.popup__signUp .popup__close {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+.popup__signUp .popup__close span {
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+}
+.popup__signUp .popup__close:hover span:nth-child(1) {
+  -webkit-animation: close 0.5s;
+          animation: close 0.5s;
+}
+.popup__signUp .popup__close:hover span:nth-child(3) {
+  -webkit-animation: close 0.5s 0.2s;
+          animation: close 0.5s 0.2s;
+}
+.popup__signUp .popup__close:hover span:nth-child(2) {
+  -webkit-animation: close 0.5s 0.4s;
+          animation: close 0.5s 0.4s;
+}
+.popup__signUp .popup__close:hover span:nth-child(4) {
+  -webkit-animation: close 0.5s 0.7s;
+          animation: close 0.5s 0.7s;
+}
+.popup__signUp .popup__close:hover span:nth-child(5) {
+  -webkit-animation: close 0.5s 1s;
+          animation: close 0.5s 1s;
+}
+.popup__signUp_active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+/*---/// Всплывающее окно для регистрации */
 @media (max-width: 1024px) {
   .main__block-title .main__block-header h1 {
     font-size: 40px;
@@ -1294,5 +1442,86 @@ body {
   .host__blocks .host__block-text {
     width: 100%;
     margin-bottom: 50px;
+  }
+}
+@media (width: 736px) and (height: 414px) {
+  .main__block .main__block-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .main__block-img {
+    width: 445px;
+  }
+
+  .mobile__menu_active {
+    overflow: auto;
+  }
+
+  .mobile__menu .header__wrap .header__wrap-navBtn {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .mobile__menu .header__wrap .header__wrap-navBtn .header__item .header__link {
+    font-size: 40px;
+  }
+}
+@media (width: 667px) and (height: 375px) {
+  .main__block .main__block-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .topics__block {
+    width: 32%;
+  }
+
+  .mobile__menu_active {
+    overflow: auto;
+  }
+
+  .mobile__menu .header__wrap .header__wrap-navBtn {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .mobile__menu .header__wrap .header__wrap-navBtn .header__item .header__link {
+    font-size: 40px;
+  }
+}
+@media (width: 568px) and (height: 320px) {
+  .main__block .main__block-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .topics__block {
+    width: 48%;
+  }
+
+  .mobile__menu_active {
+    overflow: auto;
+  }
+
+  .mobile__menu .header__wrap .header__wrap-navBtn {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .mobile__menu .header__wrap .header__wrap-navBtn .header__item .header__link {
+    font-size: 40px;
   }
 }
